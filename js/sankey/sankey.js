@@ -196,13 +196,13 @@ function sankeyGen() {
     				.attr("class", function(d) { return "node " + d.name; })
     				.attr("transform", function(d) {
     					return "translate(" + d.x + "," + d.y + ")";
-    				});
+    				})
     				//// Drag the nodes ////
-					/*.call(d3.drag()
+					.call(d3.drag()
 						.subject(function(d) { return d; })
 						.on("start", function() { this.parentNode.appendChild(this);})
 						.on("drag", dragmove)
-					);*/
+					);
 
 	// add the rectangles for the nodes
 	node.append("rect")
