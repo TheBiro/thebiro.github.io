@@ -108,7 +108,7 @@ function plotChurn() {
 
 		// BARS SELECTION	
 		svg.selectAll("rect")
-			.on("mousemove", function(d) {
+			.on("mouseover", function(d) {
 				d3.selectAll("." + d.key).style("fill", "#0da4d3")
 				d3.selectAll(".lgd_" + d.key).style("fill", "#0da4d3")
 			})
@@ -119,7 +119,7 @@ function plotChurn() {
 
 		// LEGEND SELECTION
 		svg.selectAll("g.lgd")
-			.on("mousemove", function(d) {			
+			.on("mouseover", function(d) {			
 				d3.selectAll("." + d).style("fill", "#0da4d3")
 				d3.selectAll(".lgd_" + d).style("fill", "#0da4d3")
 			})

@@ -29,7 +29,7 @@ function plotPie() {
 	var datum;
 
 	//////// READ FILE ////////
-	d3.csv("data/pie_chart.csv", function(d){
+	d3.csv("data/pie_chart.csv", function(d) {
 		d.var = +d.var;
 		return d;
 	}, function(error, data) {
