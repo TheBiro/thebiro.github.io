@@ -18,6 +18,7 @@
 
     <!-- Meu Css -->
     <link href="/css/sankey.css" rel="stylesheet">
+    <link href="/css/pie.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="/build/css/custom.css" rel="stylesheet">
 
@@ -127,24 +128,23 @@
         <div class="right_col" role="main">
           <div class="">
             <div class="row top_tiles" style="margin: 10px 0;">
-              <div class="col-md-3 col-sm-3 col-xs-6 tile" style="height: 150px">
-                <span>Gráfico 1</span>
+              <div class="col-md-3 col-sm-3 col-xs-6 tile" style="height: 130px">
+                <span>Produto</span>
                 <div id="ov_chart_1" class="row" style="height:100%"></div>
               </div>
-              <div class="col-md-3 col-sm-3 col-xs-6 tile" style="height: 150px">
-                <span>Gráfico 2</span>
+              <div class="col-md-3 col-sm-3 col-xs-6 tile" style="height: 130px">
+                <span>Plano</span>
                 <div id="ov_chart_2" class="row" style="height:100%"></div>
               </div>
-              <div class="col-md-3 col-sm-3 col-xs-6 tile" style="height: 150px">
-                <span>Gráfico 3</span>
+              <div class="col-md-3 col-sm-3 col-xs-6 tile" style="height: 130px">
+                <span>Regional</span>
                 <div id="ov_chart_3" class="row" style="height:100%"></div>
               </div>
-              <div class="col-md-3 col-sm-3 col-xs-6 tile" style="height: 150px">
-                <span>Gráfico 4</span>
+              <div class="col-md-3 col-sm-3 col-xs-6 tile" style="height: 130px">
+                <span>Score</span>
                 <div id="ov_chart_4" class="row" style="height:100%"></div>
               </div>
             </div>
-            <br />
 
 
             <div class="row">
@@ -171,7 +171,9 @@
                   </div>
                   <div class="x_content"> 
                     <div class="demo-container" id="chart_height" >
-                      <div id="chart_pie" class="demo-placeholder" style="height:400px"></div>
+                      <div class="demo-placeholder" style="height:400px">
+                      	<div id="chart_pie" class="row" style="height:100%"></div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -246,6 +248,12 @@
 
     <!-- Overview Charts -->
     <script src="js/overview/overview_1.js"></script>
+    <script src="js/overview/overview_2.js"></script>
+    <script src="js/overview/overview_3.js"></script>
+    <script src="js/overview/overview_4.js"></script>
+
+    <!-- Pie Chart -->
+    <script src="js/churn/pie_chart.js"></script>
 
     <!-- Churn Chart 1 -->
     <script src="js/churn/churn_chart_1.js"></script>

@@ -1,4 +1,4 @@
-function plotOv1() {
+function overview() {
 
     var margin = {},
     	padding = {},
@@ -22,7 +22,7 @@ function plotOv1() {
 
 
     //////// CANVAS AND VARIABLES ////////
-    var svg = d3.select("#ov_chart_1").append("svg");
+    var svg = d3.select("#ov_chart_4").append("svg");
 
     var g = svg.append("g");
 
@@ -85,6 +85,18 @@ function plotOv1() {
         g.append("g")
             .attr("class", "x axis");       
 
+        // Y Axis
+        g.append("g")
+            .attr("class", "y axis")
+        .append("text")
+            .attr("x", 2)
+            .attr("dy", "0.32em")
+            .attr("fill", "#000")
+            .attr("font-weight", "bold")
+            .attr("text-anchor", "start")
+            .text("Texto");
+
+
         update();
     	window.addEventListener("resize", update);
 
@@ -94,14 +106,14 @@ function plotOv1() {
 
     	var chartDim = document.getElementById("ov_chart_1");
 
-        margin = {top: 40, right: 10, bottom: 40, left: 10},
-        padding = {top: 0, right: 0, bottom: 0, left: 0},
-        outerWidth = chartDim.clientWidth,
-        outerHeight = chartDim.clientHeight,
-        innerWidth = outerWidth - margin.left - margin.right,
-        innerHeight = outerHeight - margin.top - margin.bottom,
-        width = innerWidth - padding.left - padding.right,
-        height = innerHeight - padding.top - padding.bottom;
+    	var margin = {top: 10, right: 10, bottom: 40, left: 30},
+    		padding = {top: 0, right: 0, bottom: 0, left: 0},
+    		outerWidth = chartDim.clientWidth,
+    	    outerHeight = chartDim.clientHeight,
+    	    innerWidth = outerWidth - margin.left - margin.right,
+    	    innerHeight = outerHeight - margin.top - margin.bottom,
+    	    width = innerWidth - padding.left - padding.right,
+    	    height = innerHeight - padding.top - padding.bottom;
 
     	// Canvas dimensions
     	svg.attr("width", outerWidth)
@@ -130,8 +142,14 @@ function plotOv1() {
     		.attr("transform", "translate(0," + height + ")")
     		.call(d3.axisBottom(x0Scale));
 
+    	// yaxis
+    	g.selectAll("g.y.axis")
+    		.call(d3.axisLeft(yScale).ticks(null, "s"))
+    	// text	
+    	.selectAll("g.y.axis.text")
+    		.attr("y", yScale(yScale.ticks().pop()) + 0.5);
 
     };
-
 }
-plotOv1();
+
+overview();

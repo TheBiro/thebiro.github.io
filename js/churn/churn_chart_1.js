@@ -1,15 +1,10 @@
 function plotChurn() {
 
-	var chartDim = document.getElementById("chart_churn_1");
-
-	var margin = {top: 20, right: 0, bottom: 0, left: 30},
-		padding = {top: 20, right: 10, bottom: 10, left: 0},
-		outerWidth = chartDim.clientWidth,
-	    outerHeight = chartDim.clientHeight,
-	    innerWidth = outerWidth - margin.left - margin.right,
-	    innerHeight = outerHeight - margin.top - margin.bottom,
-	    width = innerWidth - padding.left - padding.right,
-	    height = innerHeight - padding.top - padding.bottom;
+    var margin = {},
+    	padding = {},
+    	outerWidth, outerHeight,
+        innerWidth, innerHeight,
+        width, height;
 
 	//////// SCALES ////////
 	var x0Scale = d3.scaleBand()
@@ -24,7 +19,6 @@ function plotChurn() {
 
 	var colorScale = d3.scaleOrdinal()
 	    .range(["#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
-
 
 	//////// CANVAS AND VARIABLES ////////
 	var svg = d3.select("#chart_churn_1").append("svg");
@@ -46,6 +40,8 @@ function plotChurn() {
 		keys = data.columns.slice(1);
 
 		datum = data;
+
+		// FAZER CONDICAO PARA FILTRAR OS DADOS DE ACORDO COM O MOUSE NO PIE CHART
 
 		// Set domains based on data
 		x0Scale.domain(datum.map(function(d) { return d.lead; }));
@@ -138,7 +134,10 @@ function plotChurn() {
 
 		var chartDim = document.getElementById("chart_churn_1");
 
-		var outerWidth = chartDim.clientWidth,
+		
+		var margin = {top: 20, right: 0, bottom: 0, left: 40},
+			padding = {top: 20, right: 10, bottom: 10, left: 0},
+			outerWidth = chartDim.clientWidth,
 		    outerHeight = chartDim.clientHeight,
 		    innerWidth = outerWidth - margin.left - margin.right,
 		    innerHeight = outerHeight - margin.top - margin.bottom,
@@ -155,6 +154,8 @@ function plotChurn() {
 		x0Scale.rangeRound([0, width]);
 		yScale.rangeRound([height, 0]);
 		x1Scale.domain(keys).rangeRound([0, x0Scale.bandwidth()]);
+
+
 
 		// Update Bars
 		//
